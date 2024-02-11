@@ -5,10 +5,10 @@ FP = -fPIC
 
 .PHONY: all clean
 
-all: connections knapsack
+all: my_graph knapsack
 
-connections: my_graph.o libmy_mat.a
-	$(CC) -o connections my_graph.o libmy_mat.a $(CFLAGS)
+my_graph: my_graph.o libmy_mat.a
+	$(CC) -o my_graph my_graph.o libmy_mat.a $(CFLAGS)
 
 knapsack: my_Knapsack.o
 	$(CC) -o knapsack my_Knapsack.o $(CFLAGS)
@@ -26,4 +26,4 @@ my_Knapsack.o: my_Knapsack.c
 	$(CC) $(CFLAGS) $(FP) -c my_Knapsack.c -o my_Knapsack.o
 
 clean: 
-	rm -f *.o *.a connections knapsack
+	rm -f *.o *.a my_graph knapsack
