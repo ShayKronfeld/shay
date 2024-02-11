@@ -3,32 +3,47 @@
 
 int main (){
     int mat[LENGTH][LENGTH];
-    char choice = 'H'; // Initialize choice to any non-'D' value
+    char choice = 'H';  // Initialize choice to any non-'D' value
 	int i ,j ;
 
-    while(choice != 'D') {
-        //printf("Choose function (A/B/C/D): ");
-        scanf(" %c", &choice); // Add a space before %c to consume any leading whitespace
-
-        switch (choice) {
-            case 'A':
+        while(choice != 'D' || choice!=EOF){
+            scanf(" %c",&choice);
+            if(choice=='A'){
                 scanTheMatrix(mat);
-                break;
-            case 'B':
-                scanf("%d %d", &i, &j);
-                isPath(mat, i, j);
-                break;
-            case 'C':
-                scanf("%d %d", &i, &j);
-                shortest(mat, i, j);
-                break;
-            case 'D':
-                break; // Exit the loop
-            default:
-                //printf("Invalid choice. Please enter A, B, C, or D.\n");
-                break;
+            }
+            else if(choice=='B'){
+                scanf(" %d %d",&i,&j);
+                isPath(mat,i,j);	
+            }	
+            else if(choice=='C') {
+                scanf(" %d %d",&i,&j);
+                shortest(mat,i,j);
+            }
         }
-    }
+        return 0;
+    // while(choice != 'D') {
+    //     //printf("Choose function (A/B/C/D): ");
+    //     scanf(" %c", &choice); // Add a space before %c to consume any leading whitespace
 
-    return 0;
+    //     switch (choice) {
+    //         case 'A':
+    //             scanTheMatrix(mat);
+    //             break;
+    //         case 'B':
+    //             scanf("%d %d", &i, &j);
+    //             isPath(mat, i, j);
+    //             break;
+    //         case 'C':
+    //             scanf("%d %d", &i, &j);
+    //             shortest(mat, i, j);
+    //             break;
+    //         case 'D':
+    //             break; // Exit the loop
+    //         default:
+    //             //printf("Invalid choice. Please enter A, B, C, or D.\n");
+    //             break;
+    //     }
+    // }
+
+    // return 0;
 }
