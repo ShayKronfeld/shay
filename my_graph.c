@@ -6,21 +6,23 @@ int main (){
     char choice = 'H';  // Initialize choice to any non-'D' value
 	int i ,j ;
 
-        while(choice != 'D' || choice!=EOF){
-            scanf(" %c",&choice);
-            if(choice=='A'){
-                scanTheMatrix(mat);
-            }
-            else if(choice=='B'){
-                scanf(" %d %d",&i,&j);
-                isPath(mat,i,j);	
-            }	
-            else if(choice=='C') {
-                scanf(" %d %d",&i,&j);
-                shortest(mat,i,j);
-            }
+    while(choice != 'D' && choice != EOF){
+        scanf(" %c",&choice);
+        if(choice=='A'){
+            scanTheMatrix(mat);
+           // printMat(mat);
         }
-        return 0;
+        else if(choice=='B'){
+            scanf(" %d %d",&i,&j);
+            dinamicPrograming(mat,i,j);
+            isPath(mat,i,j);	
+        }	
+        else if(choice=='C') {
+            scanf(" %d %d",&i,&j);
+            shortest(mat,i,j);
+        }
+    }
+    return 0;
     // while(choice != 'D') {
     //     //printf("Choose function (A/B/C/D): ");
     //     scanf(" %c", &choice); // Add a space before %c to consume any leading whitespace

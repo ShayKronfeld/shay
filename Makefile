@@ -16,7 +16,7 @@ knapsack: my_Knapsack.o
 my_graph.o: my_graph.c my_mat.h
 	$(CC) $(CFLAGS) $(FP) -c my_graph.c -o my_graph.o
 
-libmy_mat.a: my_mat.o 
+libmy_mat.a: my_mat.o
 	$(AR) -rcs libmy_mat.a my_mat.o 
 
 my_mat.o: my_mat.c my_mat.h
