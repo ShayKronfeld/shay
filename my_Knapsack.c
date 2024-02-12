@@ -37,12 +37,11 @@ int main() {
 }
 
 
-/* This function creates the table and enters selected_bool the selected items and returns the max value of all the products */
 int chooseItems(int weights[], int values[], int selected_bool[]) {
    
     int matrix[NUM_PRODUCTS + 1][MAX_CAPACITY + 1];
     for (int i = 0; i <= NUM_PRODUCTS; i++) {
-        for (int j = 0; j <= MAX_CAPACITY; j++) {
+        for (int j = 0; j <= MAX_CAPACITY; j++) {         // Fill the matrix by using dynamic programming
             if (i == 0 || j == 0)
                 matrix[i][j] = 0;
             else if (weights[i - 1] <= j)
@@ -52,7 +51,7 @@ int chooseItems(int weights[], int values[], int selected_bool[]) {
         }
     }
     int all_weight = MAX_CAPACITY;
-        for (size_t i = NUM_PRODUCTS; i > 0; i--) {
+        for (size_t i = NUM_PRODUCTS; i > 0; i--) {            // Find the items that we take
             if (matrix[i][all_weight] != matrix[i - 1][all_weight]) {
                 selected_bool[i - 1] = TRUE;
                 all_weight -= weights[i - 1];        
