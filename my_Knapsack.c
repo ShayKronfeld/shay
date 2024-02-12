@@ -3,13 +3,13 @@
 #define MAX_WEIGHT 20           // Maximum weight
 #define NUM_ITEMS 5             // Number of items
 #define MAX_STRING_LENGTH 20    // Max length for a name of the item
-# define TRUE 1
-# define FALSE 0
+#define TRUE 1
+#define FALSE 0
 
 int knapSack(int weights[MAX_WEIGHT], int values[NUM_ITEMS], int selected[NUM_ITEMS]);
 
 int main() {
-    char item_names[NUM_ITEMS][MAX_STRING_LENGTH + 1];           // one more its for \0 
+    char item_names[NUM_ITEMS];          
     int item_values[NUM_ITEMS] = {0};
     int item_weights[MAX_WEIGHT] = {0};
 
