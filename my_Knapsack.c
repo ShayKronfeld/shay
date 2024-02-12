@@ -9,7 +9,7 @@
 int knapSack(int weights[MAX_WEIGHT], int values[NUM_ITEMS], int selected[NUM_ITEMS]);
 
 int main() {
-    char item_names[NUM_ITEMS][NUM_ITEMS];          
+    char item_names[NUM_ITEMS+1];          
     int item_values[NUM_ITEMS] = {0};
     int item_weights[MAX_WEIGHT] = {0};
 
